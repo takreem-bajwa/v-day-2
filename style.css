@@ -161,8 +161,9 @@
     background-position: center;
     text-align: center;
     color: white;
-    padding: 30px 35px;
+    padding: 30px 20px;
     position: relative;
+    overflow: hidden; /* ensures text stays inside */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -170,46 +171,47 @@
 .common h2{
     position: absolute;
     top: 20px;
-    left: 15px;
-    font-size: clamp(1.2rem, 2vw, 2rem); /* scales with viewport */
+    left: 50%;
+    transform: translateX(-50%); /* centers horizontally */
+    font-size: clamp(1.2rem, 2vw, 2rem);
     font-weight: bold;
     transition: transform 0.3s ease;
+    white-space: nowrap; /* prevents wrapping outside box */
 }
 
-/* Hidden text with responsive font */
+/* Hidden text centered inside the box */
 .common p{
     position: absolute;
     bottom: 20px;
-    left: 15px;
-    right: 15px;
-    font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* scales with viewport */
+    left: 50%;
+    transform: translate(-50%, 20px); /* starts slightly below */
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
     line-height: 1.4;
     opacity: 0;
+    width: 90%; /* ensures text stays inside box */
+    text-align: center;
     color: white;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 /* Hover animations */
 .common:hover h2{
-    transform: translateX(20px);
+    transform: translate(-50%, 0) translateX(10px); /* slight slide */
 }
 
 .common:hover p{
-    transform: translateY(-10px);
+    transform: translate(-50%, 0); /* moves up into view */
     opacity: 1;
 }
 
-/* Optional: additional responsive tweaks for small screens */
+/* Mobile tweaks */
 @media (max-width: 480px) {
     .common h2 {
         top: 15px;
-        left: 10px;
         font-size: 1.3rem;
     }
     .common p {
         bottom: 15px;
-        left: 10px;
-        right: 10px;
         font-size: 1rem;
     }
 }
