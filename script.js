@@ -14,7 +14,7 @@ function movebutton(){
     
 }   
 
-<script>
+
 document.querySelectorAll('.common').forEach(box => {
     const paragraph = box.querySelector('p');
     const container = box;
@@ -47,7 +47,7 @@ document.querySelectorAll('.common').forEach(box => {
         fitText();
     });
 });
-</script>
+
 
 
 
