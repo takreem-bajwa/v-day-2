@@ -74,8 +74,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     background-color: rgb(251, 136, 155);
     height: 100vh;
     /* justify-content: center;
