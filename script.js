@@ -14,4 +14,40 @@ function movebutton(){
     
 }   
 
+<script>
+document.querySelectorAll('.common').forEach(box => {
+    const paragraph = box.querySelector('p');
+    const container = box;
+    let baseFont = 16; // base font size in px
+
+    // Set initial font size
+    paragraph.style.fontSize = baseFont + 'px';
+
+    // Function to fit text dynamically
+    const fitText = () => {
+        let fontSize = baseFont;
+        paragraph.style.fontSize = fontSize + 'px';
+        
+        while(paragraph.scrollHeight > container.clientHeight - 60 && fontSize > 6){
+            fontSize -= 1; // shrink until it fits
+            paragraph.style.fontSize = fontSize + 'px';
+        }
+    };
+
+    // Fit text on page load
+    fitText();
+
+    // Fit text again when hovered (optional for smoother effect)
+    box.addEventListener('mouseenter', () => {
+        fitText();
+    });
+
+    // Optional: adjust on window resize
+    window.addEventListener('resize', () => {
+        fitText();
+    });
+});
+</script>
+
+
 
