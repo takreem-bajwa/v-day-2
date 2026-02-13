@@ -185,7 +185,7 @@
     bottom: 20px;
     left: 50%;
     transform: translate(-50%, 20px); /* starts slightly below */
-    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.7rem, 1.5vw, 1.2rem);
     line-height: 1.4;
     opacity: 0;
     width: 90%; /* ensures text stays inside box */
