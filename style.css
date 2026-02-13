@@ -183,6 +183,6 @@
 .common:hover p{
     left : 15px;
     right:15px;
-    transform: translateY(30px);
+    transform: translateY(38px);
     opacity: 1;
 }
